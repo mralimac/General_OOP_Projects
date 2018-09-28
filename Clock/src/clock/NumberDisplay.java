@@ -32,6 +32,7 @@ public class NumberDisplay
 		this.hours = hours;
 		this.minutes = minutes;
 		this.seconds = 0;
+		this.is12Hr = false;
 	}
 	
 	public NumberDisplay(int hours, int minutes, int seconds)
@@ -39,6 +40,23 @@ public class NumberDisplay
 		this.hours = hours;
 		this.minutes = minutes;
 		this.seconds = seconds;
+		this.is12Hr = false;
+	}
+	
+	public NumberDisplay(int hours, int minutes, boolean is12Hr)
+	{
+		this.hours = hours;
+		this.minutes = minutes;
+		this.seconds = 0;
+		this.is12Hr = is12Hr;
+	}
+	
+	public NumberDisplay(int hours, int minutes, int seconds, boolean is12Hr)
+	{
+		this.hours = hours;
+		this.minutes = minutes;
+		this.seconds = seconds;
+		this.is12Hr = is12Hr;
 	}
 	//End Constructor
 	
@@ -90,9 +108,13 @@ public class NumberDisplay
 		this.is12Hr = is12Hr;
 	}
 	
+	//This is the increment section. This section adds one to the second number
+	//But, if this puts "second" over 60, then it jumps back to zero and instead adds 1 to "minute"
+	//But, if that puts "minute" over 60, then it puts "minute" back to zero and instead adds 1 to "hour"
+	//If hour exceeds 12 OR 24 (depending on boolean above) then it will set hour back to zero
 	public void increment()
 	{
-		this.seconds++;
+		this.seconds++;		
 		if(this.seconds > 59)
 		{
 			this.seconds = 0;
