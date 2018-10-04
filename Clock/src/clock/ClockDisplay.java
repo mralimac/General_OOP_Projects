@@ -7,6 +7,8 @@ public class ClockDisplay
 	//End Attributes
 	
 	//Constructors Section
+	
+	//I have placed a lot of different constructors here to cover as many overloaders as possible
 	public ClockDisplay()
 	{		
 		
@@ -41,6 +43,8 @@ public class ClockDisplay
 	
 	
 	//Method Section
+	
+	//This method finalises the clock format for output purposes
 	public String displayClock()
 	{
 		return stringFormatter(numberDisplay1.getHour()) + ":"
@@ -48,13 +52,14 @@ public class ClockDisplay
 				+ stringFormatter(numberDisplay1.getSecond());
 	}
 	
+	//This method helps with the formatting process
 	public String stringFormatter(int inputNumber)
 	{
 		String format = String.format("%%0%dd", 2);
 		return String.format(format, inputNumber);
 	}
 	
-	
+	//This method ticks the clock by one second
 	public void timeTick()
 	{
 		numberDisplay1.increment();
