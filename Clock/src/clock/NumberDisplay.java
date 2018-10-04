@@ -11,6 +11,8 @@ public class NumberDisplay
 	//End Attributes
 	
 	//Constructor Section
+	
+	//Added a bunch of constructors for overloader purposes
 	public NumberDisplay()
 	{
 		this.hours = 0;
@@ -61,36 +63,44 @@ public class NumberDisplay
 	//End Constructor
 	
 	//Method Section
+	
+	//This "setter" sets the clocks hour
 	public void setHour(int hour)
 	{
 		this.hours = hour;
 	}
 	
+	//This "setter" sets the clocks minute
 	public void setMinute(int minute)
 	{
 		this.minutes = minute;
 	}
 	
+	//This "setter" sets the clocks second
 	public void setSecond(int second)
 	{
 		this.seconds = second;
 	}
 	
+	//This "getter" gets the hour time of the clock
 	public int getHour()
 	{
 		return this.hours;
 	}
 	
+	//This "getter" gets the minute time of the clock
 	public int getMinute()
 	{
 		return this.minutes;
 	}
 	
+	//This "getter" gets the second time of the clock
 	public int getSecond()
 	{
 		return this.seconds;
 	}
 	
+	//This method decides if the clock is 12hr or 24hr time	
 	public int maximumHourAllowed()
 	{
 		if(this.is12Hr)
@@ -103,6 +113,7 @@ public class NumberDisplay
 		}
 	}
 	
+	//This "setter" sets if the clock is a 12hr clock or not
 	public void set12Hr(boolean is12Hr)
 	{
 		this.is12Hr = is12Hr;
